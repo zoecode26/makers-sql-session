@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>Country</th>
+        <th>Continent</th>
+        <th>Population</th>
+        <th>Population Density (million per km)</th>
+        <th>GNI Per Capita (Thousands)</th>
+      </tr>
+      <% @data.each do |country| %>
+        <tr>
+          <td><%= country.name %></td>
+          <td><%= country.continent %></td>
+          <td><%= country.population %></td>
+          <td><%= country.density %></td>
+          <td><%= country.gni %></td>
+        </tr>
+      <% end %>
+    </table>
+  </body>
+</html>
