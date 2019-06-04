@@ -7,19 +7,23 @@ class CountryData
     @name = name
     @continent = continent
     @population = population
-    @density = population
+    @density = density
     @gni = gni
   end
 
   def self.all
-    result = DatabaseConnection.query('SELECT * FROM countries')
+    result = DatabaseConnection.query('SELECT * FROM countries;')
     result.map{ |country| CountryData.new(country['name'], country['continent'], country['population'], country['density'], country['gni']) }
   end
 
   def self.european_countries
+    result = DatabaseConnection.query("SELECT * FROM countries WHERE continent = 'Europe';")
+    result.map{ |country| CountryData.new(country['name'], country['continent'], country['population'], country['density'], country['gni']) }
   end
 
   def self.all_data_sorted_by_population_increasing_order
+    result = DatabaseConnection.query("SELECT * FROM countries ORDER BY population;")
+    result.map{ |country| CountryData.new(country['name'], country['continent'], country['population'], country['density'], country['gni']) }
   end
 
   def self.all_data_sorted_by_population_decreasing_order
