@@ -1,6 +1,6 @@
 # Extend a database-backed application
 
-## setup
+## Setup
 
 First of all, to get everything set up
 
