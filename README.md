@@ -1,4 +1,4 @@
-# Extend a database-backed application
+# Extend a database-backed web application
 
 ## Setup
 
